@@ -1,27 +1,17 @@
 package code.gui;
 
-import javax.swing.JFrame;
-import javax.swing.GroupLayout;
+import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JScrollPane;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.SwingConstants;
+import java.util.Objects;
 
 import code.Computer;
 import code.barecomputer.Clock;
 
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
 import javax.swing.LayoutStyle.ComponentPlacement;
-
-import javax.swing.JButton;
 
 public class FirstGUI extends Thread
 {
@@ -46,6 +36,7 @@ public class FirstGUI extends Thread
 	private void initialize() 
 	{
 		frame = new JFrame();
+		frame.setIconImage(new ImageIcon(getClass().getResource("/images/OsIcon.png")).getImage());
 		frame.setBounds(50, 50, 1024, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
