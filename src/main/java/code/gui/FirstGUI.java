@@ -1,27 +1,17 @@
 package code.gui;
 
-import javax.swing.JFrame;
-import javax.swing.GroupLayout;
+import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JScrollPane;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.SwingConstants;
+import java.util.Objects;
 
 import code.Computer;
 import code.barecomputer.Clock;
 
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
 import javax.swing.LayoutStyle.ComponentPlacement;
-
-import javax.swing.JButton;
 
 public class FirstGUI extends Thread
 {
@@ -46,9 +36,26 @@ public class FirstGUI extends Thread
 	private void initialize() 
 	{
 		frame = new JFrame();
+		frame.setIconImage(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/osicon.png"))).getImage());
+
 		frame.setBounds(50, 50, 1024, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
+		ImageIcon backgroundImage = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/background.jpg")));
+		//重写背景透明度设置方法
+		JLabel backgroundLabel = new JLabel() {
+			@Override
+			public void paintComponent(Graphics g) {
+				Graphics2D g2d = (Graphics2D) g.create();
+				g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.7f)); // 设置透明度，这里的值为 0.5f
+				super.paintComponent(g2d);
+				g2d.dispose();
+			}
+		};
+		backgroundLabel.setIcon(backgroundImage);
+		backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+		frame.setContentPane(backgroundLabel);
+
 		JScrollPane scrollPane = new JScrollPane();
 		
 		name = new JTextField();

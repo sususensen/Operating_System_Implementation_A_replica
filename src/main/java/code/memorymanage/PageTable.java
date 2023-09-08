@@ -17,9 +17,9 @@ public class PageTable
 	 * 1表示上次就被访问
 	 * 所以每次替换时，只需要找到记录为0的index即可
 	 * */
-	private PageNumber pageNumber[];// 逻辑页号以及对应的LRU标志位
-	private int memoryBlockNumber[];// 内存物理块号
-	private int diskBlockNumber[];	// 外存物理块号
+	private final PageNumber[] pageNumber;// 逻辑页号以及对应的LRU标志位
+	private final int[] memoryBlockNumber;// 内存物理块号
+	private final int[] diskBlockNumber;	// 外存物理块号
 	private boolean isModify[];		// 表示是否修改，true表示修改
 	private boolean Flag[];			// 表示该表项是否有效，true为有效
 	
