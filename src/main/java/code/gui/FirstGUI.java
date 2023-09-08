@@ -36,10 +36,26 @@ public class FirstGUI extends Thread
 	private void initialize() 
 	{
 		frame = new JFrame();
-		frame.setIconImage(new ImageIcon(getClass().getResource("/images/OsIcon.png")).getImage());
+		frame.setIconImage(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/osicon.png"))).getImage());
+
 		frame.setBounds(50, 50, 1024, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
+		ImageIcon backgroundImage = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/background.jpg")));
+		//重写背景透明度设置方法
+		JLabel backgroundLabel = new JLabel() {
+			@Override
+			public void paintComponent(Graphics g) {
+				Graphics2D g2d = (Graphics2D) g.create();
+				g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.7f)); // 设置透明度，这里的值为 0.5f
+				super.paintComponent(g2d);
+				g2d.dispose();
+			}
+		};
+		backgroundLabel.setIcon(backgroundImage);
+		backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+		frame.setContentPane(backgroundLabel);
+
 		JScrollPane scrollPane = new JScrollPane();
 		
 		name = new JTextField();
