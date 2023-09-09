@@ -58,24 +58,11 @@ public class FirstGUI extends Thread
 
 		JScrollPane scrollPane = new JScrollPane();
 		
-		name = new JTextField();
-		name.setText("Student");
-		name.setFont(new Font("宋体", Font.PLAIN, 32));
-		name.setColumns(10);
-		
-		JLabel lblNewLabel_1 = new JLabel("用户名");
-		lblNewLabel_1.setFont(new Font("黑体", Font.PLAIN, 32));
-		
-		JLabel lblNewLabel_1_1 = new JLabel("密  码");
-		lblNewLabel_1_1.setFont(new Font("黑体", Font.PLAIN, 32));
-		
-		password = new JPasswordField();
-		password.setFont(new Font("宋体", Font.PLAIN, 32));
-		
+
 		// 确定
 		yes = new JButton("确  定");
 		yes.setEnabled(false);
-		yes.setFont(new Font("楷体", Font.BOLD, 32));
+		yes.setFont(new Font("楷体", Font.BOLD, 30));
 		yes.addActionListener(e -> {
 			// TODO Auto-generated method stub
 			String pword = String.valueOf(password.getPassword());
@@ -102,110 +89,185 @@ public class FirstGUI extends Thread
 				System.exit(1);
 			}
 		});
-		
-		JLabel lblNewLabel_2 = new JLabel("马树凡");
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel_2.setFont(new Font("楷体", Font.PLAIN, 99));
-		
-		JLabel lblNewLabel_3 = new JLabel("默认用户名为任意字符");
-		lblNewLabel_3.setFont(new Font("宋体", Font.PLAIN, 18));
-		
-		JLabel lblNewLabel_3_1 = new JLabel("默认密码为123456");
-		lblNewLabel_3_1.setFont(new Font("宋体", Font.PLAIN, 18));
-		
-		JLabel lblNewLabel_3_1_1 = new JLabel("操作系统课程设计");
-		lblNewLabel_3_1_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel_3_1_1.setFont(new Font("宋体", Font.PLAIN, 18));
-		
-		JLabel lblNewLabel_3_1_1_1 = new JLabel("2021.3.31");
-		lblNewLabel_3_1_1_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel_3_1_1_1.setFont(new Font("宋体", Font.PLAIN, 18));
-		
-		JButton rebuild = new JButton("重装系统");
-		rebuild.setFont(new Font("楷体", Font.BOLD, 32));
-		rebuild.addActionListener(new ActionListener()
-		{
+
+		JLabel labelTitle = new JLabel("操作系统课程设计");
+		labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		labelTitle.setFont(new Font("楷体", Font.PLAIN, 60));
+
+		JButton buttonEnter=new JButton("启动");
+		buttonEnter.setHorizontalAlignment(SwingConstants.CENTER);
+		buttonEnter.setFont(new Font("华文琥珀",Font.PLAIN,70));
+		ImageIcon backgroundIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/osicon.png")));
+		Image image = backgroundIcon.getImage();
+
+// 调整图像尺寸
+		int iconWidth = 60;  // 设置图像宽度
+		int iconHeight = 60; // 设置图像高度
+		Image scaledImage = image.getScaledInstance(iconWidth, iconHeight, Image.SCALE_SMOOTH);
+
+// 创建新的 ImageIcon，并设置为按钮图标
+		Icon scaledIcon = new ImageIcon(scaledImage);
+		buttonEnter.setIcon(scaledIcon);
+
+		buttonEnter.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				// TODO Auto-generated method stub
-				Computer.rebuild(false);
+			public void actionPerformed(ActionEvent e) {
+				Clock.setFlag(true);
+				Computer.mainGUI.showWindow();
+				frame.dispose();
 			}
 		});
-		
+		JLabel labelDate = new JLabel("—2023/7-2023/10");
+		labelDate.setHorizontalAlignment(SwingConstants.CENTER);
+		labelDate.setFont(new Font("宋体", Font.ITALIC, 34));
+
+		JLabel labelTeacher = new JLabel("指导老师：王金凤");
+		labelTeacher.setHorizontalAlignment(SwingConstants.CENTER);
+		labelTeacher.setFont(new Font("楷体", Font.PLAIN, 35));
+
+		JLabel labelTeam = new JLabel("团队成员：21软工8");
+		labelTeam.setHorizontalAlignment(SwingConstants.CENTER);
+		labelTeam.setFont(new Font("楷体", Font.PLAIN, 34));
+
+		JLabel labelXIE = new JLabel("202125220823 谢昊峻");
+		labelXIE.setHorizontalAlignment(SwingConstants.CENTER);
+		labelXIE.setFont(new Font("楷体", Font.PLAIN, 30));
+
+		JLabel labelZHOU = new JLabel("202125220851 周子川");
+		labelZHOU.setHorizontalAlignment(SwingConstants.CENTER);
+		labelZHOU.setFont(new Font("楷体", Font.PLAIN, 30));
+
+		JLabel labelWANG = new JLabel("202125220821 王淳殷");
+		labelWANG.setHorizontalAlignment(SwingConstants.CENTER);
+		labelWANG.setFont(new Font("楷体", Font.PLAIN, 30));
+
+		JLabel labelSU = new JLabel("202125220820 苏  森");
+		labelSU.setHorizontalAlignment(SwingConstants.CENTER);
+		labelSU.setFont(new Font("楷体", Font.PLAIN, 30));
+
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(42)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 342, GroupLayout.PREFERRED_SIZE)
-					.addGap(72)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-							.addComponent(no, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-									.addComponent(lblNewLabel_1_1, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-									.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-									.addComponent(password)
-									.addComponent(name, GroupLayout.PREFERRED_SIZE, 319, GroupLayout.PREFERRED_SIZE)))
-							.addComponent(lblNewLabel_3, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
-							.addComponent(lblNewLabel_3_1, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
-							.addGroup(Alignment.LEADING, groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(lblNewLabel_3_1_1, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 349, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_3_1_1_1, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE))
-							.addComponent(yes, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addComponent(rebuild, GroupLayout.PREFERRED_SIZE, 433, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(121, Short.MAX_VALUE))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(65)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblNewLabel_2)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblNewLabel_3_1_1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblNewLabel_3_1_1_1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(name, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(password, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(lblNewLabel_1)
-									.addGap(24)
-									.addComponent(lblNewLabel_1_1, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)))
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblNewLabel_3)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblNewLabel_3_1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(yes)
-							.addGap(18)
-							.addComponent(no, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(rebuild, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED))
-						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(76, Short.MAX_VALUE))
-		);
-		
-		JLabel lblNewLabel = new JLabel("开机信息");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("黑体", Font.PLAIN, 32));
-		scrollPane.setColumnHeaderView(lblNewLabel);
-		
+		frame.getContentPane().setLayout(groupLayout);
+
+		JLabel labelOpenInformation = new JLabel("开机信息");
+
+		labelOpenInformation.setHorizontalAlignment(SwingConstants.CENTER);
+		labelOpenInformation.setFont(new Font("楷体", Font.PLAIN, 32));
+		scrollPane.setColumnHeaderView(labelOpenInformation);
+
 		textArea = new JTextArea();
 		textArea.setEditable(false);
-		textArea.setFont(new Font("仿宋", Font.PLAIN, 18));
+		textArea.setFont(new Font("宋体", Font.PLAIN, 18));
+
 		scrollPane.setViewportView(textArea);
+        scrollPane.setSize(100,200);
+		groupLayout.setHorizontalGroup(
+				groupLayout.createSequentialGroup()
+						.addGroup(groupLayout.createParallelGroup()
+								.addComponent(labelTitle,1024,1024,1024)
+								.addGroup(groupLayout.createSequentialGroup()
+										.addGap(40)
+									  .addComponent(scrollPane,250,250,250)
+										.addGap(100)
+										.addComponent(buttonEnter)
+										.addGap(40)
+												.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+														.addComponent(labelDate)
+														.addComponent(labelTeacher)
+														.addComponent(labelTeam)
+														.addComponent(labelSU)
+														.addComponent(labelWANG)
+														.addComponent(labelZHOU)
+														.addComponent(labelXIE)
+
+												)
+
+										)
+						)
+		);
+//
+		groupLayout.setVerticalGroup(
+				groupLayout.createSequentialGroup()
+						.addGap(50)
+						.addComponent(labelTitle,60,60,60)
+						.addGap(30)
+						.addGroup(groupLayout.createParallelGroup()
+
+								.addComponent(scrollPane,510,510,510)
+								.addGroup(groupLayout.createSequentialGroup()
+										.addGap(155)
+										.addComponent(buttonEnter))
+								.addGroup(groupLayout.createSequentialGroup()
+										.addComponent(labelDate)
+										.addGap(40)
+										.addComponent(labelTeacher)
+										.addGap(40)
+										.addComponent(labelTeam)
+										.addGap(40)
+										.addComponent(labelSU)
+										.addGap(40)
+										.addComponent(labelWANG)
+										.addGap(40)
+										.addComponent(labelZHOU)
+										.addGap(40)
+										.addComponent(labelXIE)
+								)
+						)
+		);
+//		groupLayout.setVerticalGroup(
+//				groupLayout.createParallelGroup(Alignment.LEADING)
+//						.addComponent(labelTitle,250,250,250)
+//						.addGroup(groupLayout.createSequentialGroup()
+//								.addGroup(groupLayout.createParallelGroup()
+//										.addComponent(scrollPane,500,500,500)
+//								)
+//								.addGroup(groupLayout.createParallelGroup()
+//										.addGroup(groupLayout.createSequentialGroup().addComponent(labelSU,200,200,200))
+//										.addGroup(groupLayout.createSequentialGroup().addComponent(labelWANG,200,200,200))
+//										.addGroup(groupLayout.createSequentialGroup().addComponent(labelZHOU,200,200,200))
+//										.addGroup(groupLayout.createSequentialGroup().addComponent(labelXIE,200,200,200))
+//								)
+//						)
+//		);
+		//设置的是组长
+        //上下组
+//		GroupLayout.ParallelGroup hSeqTitle = groupLayout.createParallelGroup()
+//				.addComponent(labelTitle, 1000, 1000, 1000);
+//        //左右组
+//
+//		   GroupLayout.ParallelGroup hSeqXIE = groupLayout.createParallelGroup()
+//				.addComponent(labelXIE, 250, 250, 250);
+//		   GroupLayout.ParallelGroup hSeqZHOU = groupLayout.createParallelGroup()
+//				.addComponent(labelZHOU, 250, 250, 250);
+//		   GroupLayout.ParallelGroup hSeqWANG = groupLayout.createParallelGroup()
+//				.addComponent(labelWANG, 250, 250, 250);
+//		   GroupLayout.ParallelGroup hSeqSU = groupLayout.createParallelGroup()
+//				.addComponent(labelSU, 250, 250, 250);
+//
+//		GroupLayout.ParallelGroup hSeqTotal = groupLayout.createParallelGroup()
+//				.addGroup(hSeqXIE).addGroup(hSeqZHOU).addGroup(hSeqWANG).addGroup(hSeqSU);
+//		GroupLayout.SequentialGroup hSeqInfromation = groupLayout.createSequentialGroup()
+//						.addGap(50).addComponent(scrollPane,250,250,250).addGroup(hSeqTotal);
+//
+//		GroupLayout.ParallelGroup hSegGroup = groupLayout.createParallelGroup().addGroup(hSeqTitle).addGroup(hSeqInfromation);
+//
+//
+//		GroupLayout.ParallelGroup vParaTotal = groupLayout.createParallelGroup()
+//				.addComponent(labelXIE,50, 50, 50)
+//				.addComponent(labelZHOU,50, 50, 50)
+//				.addComponent(labelWANG,50, 50, 50)
+//				.addComponent(labelSU,50, 50, 50);
+//        //设置的数字是组高
+//		GroupLayout.ParallelGroup vParaTitle = groupLayout.createParallelGroup()
+//				.addComponent(labelTitle,120, 120, 120);
+//		GroupLayout.ParallelGroup vParaOpenInformation = groupLayout.createParallelGroup()
+//				.addComponent(scrollPane,509, 509, 509);
+//		GroupLayout.SequentialGroup vParaInformation  = groupLayout.createSequentialGroup().addGroup(vParaOpenInformation).addGroup(vParaTotal);
+//		GroupLayout.SequentialGroup vSeqGroup = groupLayout.createSequentialGroup().addGroup(vParaTitle).addGroup(vParaInformation);
+//
+//		groupLayout.setHorizontalGroup(hSegGroup);
+//        groupLayout.setVerticalGroup(vSeqGroup);
+//
+
 		frame.getContentPane().setLayout(groupLayout);
 	}
 	public void showWindow()

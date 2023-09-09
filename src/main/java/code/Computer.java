@@ -77,31 +77,6 @@ public class Computer {
         DeviceInfo = "";
     }
 
-    public static void rebuild(boolean flag) {
-        if (flag) {
-            CreateInitFiles();
-            System.out.println("创建磁盘映像txt文件");
-            openInfo = openInfo + "创建磁盘映像txt文件\n";
-            ClearDisk();
-            System.out.println("磁盘格式化");
-            openInfo = openInfo + "磁盘格式化\n";
-        }
-
-        ClearFree();
-        System.out.println("构建成组区块链");
-        openInfo = openInfo + "构建成组区块链\n";
-        ClearSuperBlock();
-        System.out.println("超级块初始化");
-        openInfo = openInfo + "超级块初始化\n";
-        CreateFirstInode();
-        System.out.println("创建测试用文件");
-        openInfo = openInfo + "创建测试用文件\n";
-        disk.doLoad();
-        memory.Initialize(disk);
-        RunInfo = "";
-        DeviceInfo = "";
-    }
-
     public static void CreateInitFiles() {
         String Root = System.getProperty("user.dir");
         System.out.println("Root: " + Root);
