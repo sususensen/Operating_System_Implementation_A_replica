@@ -213,60 +213,7 @@ public class FirstGUI extends Thread
 								)
 						)
 		);
-//		groupLayout.setVerticalGroup(
-//				groupLayout.createParallelGroup(Alignment.LEADING)
-//						.addComponent(labelTitle,250,250,250)
-//						.addGroup(groupLayout.createSequentialGroup()
-//								.addGroup(groupLayout.createParallelGroup()
-//										.addComponent(scrollPane,500,500,500)
-//								)
-//								.addGroup(groupLayout.createParallelGroup()
-//										.addGroup(groupLayout.createSequentialGroup().addComponent(labelSU,200,200,200))
-//										.addGroup(groupLayout.createSequentialGroup().addComponent(labelWANG,200,200,200))
-//										.addGroup(groupLayout.createSequentialGroup().addComponent(labelZHOU,200,200,200))
-//										.addGroup(groupLayout.createSequentialGroup().addComponent(labelXIE,200,200,200))
-//								)
-//						)
-//		);
-		//设置的是组长
-        //上下组
-//		GroupLayout.ParallelGroup hSeqTitle = groupLayout.createParallelGroup()
-//				.addComponent(labelTitle, 1000, 1000, 1000);
-//        //左右组
-//
-//		   GroupLayout.ParallelGroup hSeqXIE = groupLayout.createParallelGroup()
-//				.addComponent(labelXIE, 250, 250, 250);
-//		   GroupLayout.ParallelGroup hSeqZHOU = groupLayout.createParallelGroup()
-//				.addComponent(labelZHOU, 250, 250, 250);
-//		   GroupLayout.ParallelGroup hSeqWANG = groupLayout.createParallelGroup()
-//				.addComponent(labelWANG, 250, 250, 250);
-//		   GroupLayout.ParallelGroup hSeqSU = groupLayout.createParallelGroup()
-//				.addComponent(labelSU, 250, 250, 250);
-//
-//		GroupLayout.ParallelGroup hSeqTotal = groupLayout.createParallelGroup()
-//				.addGroup(hSeqXIE).addGroup(hSeqZHOU).addGroup(hSeqWANG).addGroup(hSeqSU);
-//		GroupLayout.SequentialGroup hSeqInfromation = groupLayout.createSequentialGroup()
-//						.addGap(50).addComponent(scrollPane,250,250,250).addGroup(hSeqTotal);
-//
-//		GroupLayout.ParallelGroup hSegGroup = groupLayout.createParallelGroup().addGroup(hSeqTitle).addGroup(hSeqInfromation);
-//
-//
-//		GroupLayout.ParallelGroup vParaTotal = groupLayout.createParallelGroup()
-//				.addComponent(labelXIE,50, 50, 50)
-//				.addComponent(labelZHOU,50, 50, 50)
-//				.addComponent(labelWANG,50, 50, 50)
-//				.addComponent(labelSU,50, 50, 50);
-//        //设置的数字是组高
-//		GroupLayout.ParallelGroup vParaTitle = groupLayout.createParallelGroup()
-//				.addComponent(labelTitle,120, 120, 120);
-//		GroupLayout.ParallelGroup vParaOpenInformation = groupLayout.createParallelGroup()
-//				.addComponent(scrollPane,509, 509, 509);
-//		GroupLayout.SequentialGroup vParaInformation  = groupLayout.createSequentialGroup().addGroup(vParaOpenInformation).addGroup(vParaTotal);
-//		GroupLayout.SequentialGroup vSeqGroup = groupLayout.createSequentialGroup().addGroup(vParaTitle).addGroup(vParaInformation);
-//
-//		groupLayout.setHorizontalGroup(hSegGroup);
-//        groupLayout.setVerticalGroup(vSeqGroup);
-//
+
 
 		frame.getContentPane().setLayout(groupLayout);
 	}
