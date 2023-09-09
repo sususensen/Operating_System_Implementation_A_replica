@@ -1,17 +1,15 @@
 package code.gui;
 
+import code.Computer;
+import code.barecomputer.Clock;
+
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
-
-import code.Computer;
-import code.barecomputer.Clock;
-
-import javax.swing.LayoutStyle.ComponentPlacement;
+import java.util.Timer;
 
 public class FirstGUI extends Thread
 {
@@ -120,30 +118,50 @@ public class FirstGUI extends Thread
 		JLabel labelDate = new JLabel("—2023/7-2023/10");
 		labelDate.setHorizontalAlignment(SwingConstants.CENTER);
 		labelDate.setFont(new Font("宋体", Font.ITALIC, 34));
+        labelDate.setVisible(false);
+		showLabelWithDelay(labelDate,1000);
 
 		JLabel labelTeacher = new JLabel("指导老师：王金凤");
 		labelTeacher.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTeacher.setFont(new Font("楷体", Font.PLAIN, 35));
+		labelTeacher.setVisible(false);
+		showLabelWithDelay(labelTeacher,1500);
 
 		JLabel labelTeam = new JLabel("团队成员：21软工8");
 		labelTeam.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTeam.setFont(new Font("楷体", Font.PLAIN, 34));
-
-		JLabel labelXIE = new JLabel("202125220823 谢昊峻");
-		labelXIE.setHorizontalAlignment(SwingConstants.CENTER);
-		labelXIE.setFont(new Font("楷体", Font.PLAIN, 30));
-
-		JLabel labelZHOU = new JLabel("202125220851 周子川");
-		labelZHOU.setHorizontalAlignment(SwingConstants.CENTER);
-		labelZHOU.setFont(new Font("楷体", Font.PLAIN, 30));
-
-		JLabel labelWANG = new JLabel("202125220821 王淳殷");
-		labelWANG.setHorizontalAlignment(SwingConstants.CENTER);
-		labelWANG.setFont(new Font("楷体", Font.PLAIN, 30));
+		labelTeam.setVisible(false);
+		showLabelWithDelay(labelTeam,2000);
 
 		JLabel labelSU = new JLabel("202125220820 苏  森");
 		labelSU.setHorizontalAlignment(SwingConstants.CENTER);
 		labelSU.setFont(new Font("楷体", Font.PLAIN, 30));
+		labelSU.setVisible(false);
+		showLabelWithDelay(labelSU,2500);
+
+		JLabel labelWANG = new JLabel("202125220821 王淳殷");
+		labelWANG.setHorizontalAlignment(SwingConstants.CENTER);
+		labelWANG.setFont(new Font("楷体", Font.PLAIN, 30));
+		labelWANG.setVisible(false);
+		showLabelWithDelay(labelWANG,3000);
+
+		JLabel labelZHOU = new JLabel("202125220830 周子川");
+		labelZHOU.setHorizontalAlignment(SwingConstants.CENTER);
+		labelZHOU.setFont(new Font("楷体", Font.PLAIN, 30));
+		labelZHOU.setVisible(false);
+		showLabelWithDelay(labelZHOU,3500);
+
+		JLabel labelXIE = new JLabel("202125220823 谢昊峻");
+		labelXIE.setHorizontalAlignment(SwingConstants.CENTER);
+		labelXIE.setFont(new Font("楷体", Font.PLAIN, 30));
+		labelXIE.setVisible(false);
+		showLabelWithDelay(labelXIE,4000);
+
+
+
+
+
+
 
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		frame.getContentPane().setLayout(groupLayout);
@@ -157,6 +175,8 @@ public class FirstGUI extends Thread
 		textArea = new JTextArea();
 		textArea.setEditable(false);
 		textArea.setFont(new Font("宋体", Font.PLAIN, 18));
+
+
 
 		scrollPane.setViewportView(textArea);
         scrollPane.setSize(100,200);
@@ -225,10 +245,30 @@ public class FirstGUI extends Thread
 	{
 		frame.setVisible(false);
 	}
-	
+	private static void showLabelWithDelay(JLabel label, int delay) {
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					Thread.sleep(delay); // 延迟指定的时间
+					SwingUtilities.invokeLater(new Runnable() {
+						@Override
+						public void run() {
+							label.setVisible(true); // 显示label
+						}
+					});
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+
+		thread.start();
+	}
 	/**
 	 * run
 	 * */
+
 	public void run()
 	{
 		this.showWindow();
