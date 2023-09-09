@@ -107,13 +107,12 @@ public class FirstGUI extends Thread
 		Icon scaledIcon = new ImageIcon(scaledImage);
 		buttonEnter.setIcon(scaledIcon);
 
-		buttonEnter.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Clock.setFlag(true);
-				Computer.mainGUI.showWindow();
-				frame.dispose();
-			}
+		buttonEnter.setVisible(false);
+		showLabelWithDelay(buttonEnter,5500);
+		buttonEnter.addActionListener(e -> {
+			Clock.setFlag(true);
+			Computer.mainGUI.showWindow();
+			frame.dispose();
 		});
 		JLabel labelDate = new JLabel("°™2023/7-2023/10");
 		labelDate.setHorizontalAlignment(SwingConstants.CENTER);
@@ -158,11 +157,6 @@ public class FirstGUI extends Thread
 		showLabelWithDelay(labelXIE,4000);
 
 
-
-
-
-
-
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		frame.getContentPane().setLayout(groupLayout);
 
@@ -175,7 +169,7 @@ public class FirstGUI extends Thread
 		textArea = new JTextArea();
 		textArea.setEditable(false);
 		textArea.setFont(new Font("ÀŒÃÂ", Font.PLAIN, 18));
-
+		textArea.setBackground(new Color(249,233,225));
 
 
 		scrollPane.setViewportView(textArea);
@@ -245,7 +239,7 @@ public class FirstGUI extends Thread
 	{
 		frame.setVisible(false);
 	}
-	private static void showLabelWithDelay(JLabel label, int delay) {
+	private static void showLabelWithDelay(JComponent jComponent, int delay) {
 		Thread thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -254,7 +248,7 @@ public class FirstGUI extends Thread
 					SwingUtilities.invokeLater(new Runnable() {
 						@Override
 						public void run() {
-							label.setVisible(true); // œ‘ ælabel
+							jComponent.setVisible(true); // œ‘ ælabel
 						}
 					});
 				} catch (InterruptedException e) {
@@ -275,6 +269,7 @@ public class FirstGUI extends Thread
 		try {
 			while(true)
 			{
+
 				textArea.setText(Computer.openInfo);;
 				sleep(1000);
 			}
