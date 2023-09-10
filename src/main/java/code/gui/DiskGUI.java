@@ -66,20 +66,20 @@ public class DiskGUI extends Thread
 	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1100, 640);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		
-		JLabel lblNewLabel_2 = new JLabel("\u78C1\u76D8\u603B\u5927\u5C0F");
+		JLabel lblNewLabel_2 = new JLabel("磁盘总大小");
 		lblNewLabel_2.setFont(new Font("黑体", Font.PLAIN, 32));
 		
-		JLabel lblNewLabel_2_1 = new JLabel("\u7A7A\u95F2\u6570");
+		JLabel lblNewLabel_2_1 = new JLabel("空闲数");
 		lblNewLabel_2_1.setFont(new Font("黑体", Font.PLAIN, 32));
 		
-		JLabel lblNewLabel_2_2 = new JLabel("\u6587\u4EF6\u533A\u603B\u5927\u5C0F");
+		JLabel lblNewLabel_2_2 = new JLabel("文件区总大小");
 		lblNewLabel_2_2.setFont(new Font("黑体", Font.PLAIN, 32));
 		
-		JLabel lblNewLabel_2_1_1 = new JLabel("\u7A7A\u95F2\u6570");
+		JLabel lblNewLabel_2_1_1 = new JLabel("空闲数");
 		lblNewLabel_2_1_1.setFont(new Font("黑体", Font.PLAIN, 32));
 		
 		diskSum = new JTextField();
@@ -111,15 +111,15 @@ public class DiskGUI extends Thread
 		fileUse.setColumns(10);
 		
 		inodeBar = new JProgressBar();
-		inodeBar.setToolTipText("\u5DF2\u4F7F\u7528\u7684Inode");
+		inodeBar.setToolTipText("已使用的Inode");
 		inodeBar.setStringPainted(true);
 		
 		diskBar = new JProgressBar();
-		diskBar.setToolTipText("\u5DF2\u4F7F\u7528\u7684\u78C1\u76D8\u7A7A\u95F4");
+		diskBar.setToolTipText("已使用的磁盘空间");
 		diskBar.setStringPainted(true);
 		
 		fileBar = new JProgressBar();
-		fileBar.setToolTipText("\u5DF2\u4F7F\u7528\u7684\u78C1\u76D8\u7A7A\u95F4");
+		fileBar.setToolTipText("已使用的磁盘空间");
 		fileBar.setStringPainted(true);
 		
 		scrollPane_1 = new JScrollPane();
@@ -127,7 +127,7 @@ public class DiskGUI extends Thread
 		scrollPane_2 = new JScrollPane();
 		
 		// 关闭按钮
-		closeButton = new JButton("\u5173\r\n\u95ED");
+		closeButton = new JButton("关\r\n闭");
 		closeButton.setFont(new Font("楷体", Font.BOLD, 32));
 		closeButton.addActionListener(new ActionListener()
 		{
@@ -231,7 +231,7 @@ public class DiskGUI extends Thread
 					.addGap(20))
 		);
 		
-		lblNewLabel_3 = new JLabel("\u6210\u7EC4\u533A\u5757\u94FE");
+		lblNewLabel_3 = new JLabel("成组区块链");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("黑体", Font.PLAIN, 32));
 		scrollPane_3.setColumnHeaderView(lblNewLabel_3);
@@ -241,7 +241,7 @@ public class DiskGUI extends Thread
 		scrollPane_3.setRowHeaderView(splitPane);
 		
 		// next按钮
-		JButton Next = new JButton("\u4E0B\u4E00\u7EC4");
+		JButton Next = new JButton("下一组");
 		Next.setFont(new Font("SimSun", Font.PLAIN, 12));
 		Next.addActionListener(new ActionListener() 
 		{
@@ -273,7 +273,7 @@ public class DiskGUI extends Thread
 		splitPane.setLeftComponent(Next);
 		
 		// first 按钮
-		First = new JButton("\u7B2C\u4E00\u7EC4");
+		First = new JButton("第一组");
 		First.addActionListener(new ActionListener() 
 		{
 			@Override
@@ -299,16 +299,16 @@ public class DiskGUI extends Thread
 		scrollPane_3.setViewportView(linkText);
 		
 		diskInfo = new JTextArea();
-		diskInfo.setText("\u5F15\u5BFC\u5757\uFF1A0\r\n\u8D85\u7EA7\u5757\uFF1A1\r\nInode\u5757\uFF1A2~119\r\n\u7CFB\u7EDF\u8868\uFF1A120~127\r\n\u4EA4\u6362\u533A\uFF1A128~511\r\n\u4F5C\u4E1A\u533A\uFF1A512~575\r\n\u4EE3\u7801\u533A\uFF1A576~1023\r\n\u9884\u7559\u533A\uFF1A1024~2047\r\n\u6587\u4EF6\u533A\uFF1A2048~20478\r\n\u67F1\u9762\u6570\uFF1A10\r\n\u78C1\u9053\u6570\uFF1A32\r\n\u6247\u533A\u6570\uFF1A64");
+		diskInfo.setText("引导块：0\r\n超级块：1\r\nInode块：2~119\r\n系统表：120~127\r\n交换区：128~511\r\n作业区：512~575\r\n代码区：576~1023\r\n预留区：1024~2047\r\n文件区：2048~20478\r\n柱面数：10\r\n磁道数：32\r\n扇区数：64");
 		diskInfo.setFont(new Font("仿宋", Font.PLAIN, 18));
 		scrollPane_2.setViewportView(diskInfo);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u78C1\u76D8\u5206\u533A\u57FA\u672C\u4FE1\u606F");
+		JLabel lblNewLabel_1 = new JLabel("磁盘分区基本信息");
 		scrollPane_2.setColumnHeaderView(lblNewLabel_1);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("黑体", Font.PLAIN, 32));
 		
-		JLabel lblNewLabel = new JLabel("\u78C1\u76D8\u4E2D\u7684Inode\u4F7F\u7528\u60C5\u51B5");
+		JLabel lblNewLabel = new JLabel("磁盘中的Inode使用情况");
 		lblNewLabel.setFont(new Font("黑体", Font.PLAIN, 32));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		scrollPane.setColumnHeaderView(lblNewLabel);

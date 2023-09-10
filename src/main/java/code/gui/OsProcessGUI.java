@@ -49,7 +49,7 @@ public class OsProcessGUI
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		
-		JButton btnNewButton = new JButton("\u5173\u95ED");
+		JButton btnNewButton = new JButton("¹Ø±Õ");
 		btnNewButton.setFont(new Font("¿¬Ìå", Font.BOLD, 24));
 		btnNewButton.addActionListener(new ActionListener() {
 			

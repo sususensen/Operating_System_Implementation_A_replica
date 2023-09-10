@@ -41,16 +41,16 @@ public class JobGUI extends Thread
 	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 762, 640);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		
 		numBar = new JProgressBar();
-		numBar.setToolTipText("\u4F5C\u4E1A\u6C60\u4F7F\u7528\u91CF");
+		numBar.setToolTipText("作业池使用量");
 		numBar.setStringPainted(true);
 		numBar.setOrientation(SwingConstants.VERTICAL);
 		
-		JButton closeButton = new JButton("\u5173\u95ED");
+		JButton closeButton = new JButton("关闭");
 		closeButton.setFont(new Font("楷体", Font.BOLD, 18));
 		closeButton.addActionListener(new ActionListener() 
 		{
@@ -88,7 +88,7 @@ public class JobGUI extends Thread
 					.addGap(31))
 		);
 		
-		JLabel lblNewLabel = new JLabel("\u4F5C\u4E1A\u6C60\u5185\u5BB9");
+		JLabel lblNewLabel = new JLabel("作业池内容");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("黑体", Font.PLAIN, 32));
 		scrollPane.setColumnHeaderView(lblNewLabel);

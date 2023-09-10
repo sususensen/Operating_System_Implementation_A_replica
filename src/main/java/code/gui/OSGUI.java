@@ -66,7 +66,7 @@ public class OSGUI extends Thread
 		
 		JScrollPane scrollPane_run = new JScrollPane();
 		
-		JLabel clockLabel = new JLabel("\u65F6\u949F");
+		JLabel clockLabel = new JLabel("时钟");
 		clockLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		clockLabel.setFont(new Font("黑体", Font.BOLD, 32));
 		
@@ -78,7 +78,7 @@ public class OSGUI extends Thread
 		clockText.setColumns(1);
 		
 		// 暂停按钮
-		JButton pauseButton = new JButton("\u6682\u505C");
+		JButton pauseButton = new JButton("暂停");
 		pauseButton.setFont(new Font("楷体", Font.PLAIN, 32));
 		pauseButton.addActionListener(new ActionListener() 
 		{
@@ -102,7 +102,7 @@ public class OSGUI extends Thread
 		JScrollPane scrollPane_device = new JScrollPane();
 		
 		// 关机按钮
-		JButton closeButton = new JButton("\u5173    \u673A");
+		JButton closeButton = new JButton("关    机");
 		closeButton.setFont(new Font("楷体", Font.PLAIN, 32));
 		closeButton.addActionListener(new ActionListener() 
 		{
@@ -115,7 +115,7 @@ public class OSGUI extends Thread
 		});
 		
 		// 新建作业按钮
-		JButton newjobButton = new JButton("\u65B0\u5EFA\u4F5C\u4E1A");
+		JButton newjobButton = new JButton("新建作业");
 		newjobButton.setFont(new Font("楷体", Font.PLAIN, 32));
 		newjobButton.addActionListener(new ActionListener() 
 		{
@@ -129,7 +129,7 @@ public class OSGUI extends Thread
 		});
 		
 		// 查看内存按钮
-		JButton memoryButton = new JButton("\u5185\u5B58\u7BA1\u7406");
+		JButton memoryButton = new JButton("内存管理");
 		memoryButton.setFont(new Font("楷体", Font.PLAIN, 32));
 		memoryButton.addActionListener(new ActionListener() 
 		{
@@ -142,7 +142,7 @@ public class OSGUI extends Thread
 		});
 		
 		// 查看磁盘按钮
-		JButton diskButton = new JButton("\u78C1\u76D8\u7BA1\u7406");
+		JButton diskButton = new JButton("磁盘管理");
 		diskButton.setFont(new Font("楷体", Font.PLAIN, 32));
 		diskButton.addActionListener(new ActionListener() 
 		{
@@ -155,7 +155,7 @@ public class OSGUI extends Thread
 		});
 		
 		// 查看设备按钮
-		JButton deviceButton = new JButton("\u8BBE\u5907\u7BA1\u7406");
+		JButton deviceButton = new JButton("设备管理");
 		deviceButton.setFont(new Font("楷体", Font.PLAIN, 32));
 		deviceButton.addActionListener(new ActionListener()
 		{
@@ -168,7 +168,7 @@ public class OSGUI extends Thread
 		});
 		
 		// 查看文件按钮
-		JButton fileButton = new JButton("\u6587\u4EF6\u7BA1\u7406");
+		JButton fileButton = new JButton("文件管理");
 		fileButton.setFont(new Font("楷体", Font.PLAIN, 32));
 		fileButton.addActionListener(new ActionListener() 
 		{
@@ -181,7 +181,7 @@ public class OSGUI extends Thread
 		});
 		
 		// 查看作业按钮
-		JButton jobButton = new JButton("\u4F5C\u4E1A\u7BA1\u7406");
+		JButton jobButton = new JButton("作业管理");
 		jobButton.setFont(new Font("楷体", Font.PLAIN, 32));
 		jobButton.addActionListener(new ActionListener()
 		{
@@ -194,7 +194,7 @@ public class OSGUI extends Thread
 		});
 		
 		// 查看进程按钮
-		JButton processButton = new JButton("\u8FDB\u7A0B\u7BA1\u7406");
+		JButton processButton = new JButton("进程管理");
 		processButton.setFont(new Font("楷体", Font.PLAIN, 32));
 		processButton.addActionListener(new ActionListener() 
 		{
@@ -225,14 +225,14 @@ public class OSGUI extends Thread
 		irText.setColumns(10);
 		
 		stateText = new JTextField();
-		stateText.setText("\u72B6\u6001: \u6838\u5FC3\u6001");
+		stateText.setText("状态: 核心态");
 		stateText.setHorizontalAlignment(SwingConstants.LEFT);
 		stateText.setFont(new Font("宋体", Font.PLAIN, 16));
 		stateText.setEditable(false);
 		stateText.setColumns(10);
 		
 		useText = new JTextField();
-		useText.setText("\u4F7F\u7528\u7387: 0.00%");
+		useText.setText("使用率: 0.00%");
 		useText.setHorizontalAlignment(SwingConstants.LEFT);
 		useText.setFont(new Font("宋体", Font.PLAIN, 16));
 		useText.setEditable(false);
@@ -240,7 +240,7 @@ public class OSGUI extends Thread
 		
 		useBar = new JProgressBar();
 		useBar.setFont(new Font("宋体", Font.PLAIN, 16));
-		useBar.setToolTipText("CPU\u5229\u7528\u7387");
+		useBar.setToolTipText("CPU利用率");
 		useBar.setForeground(new Color(0, 120, 215));
 		useBar.setStringPainted(true);
 		
@@ -250,7 +250,7 @@ public class OSGUI extends Thread
 		JLabel lblComputeros = new JLabel("computer_os");
 		lblComputeros.setFont(new Font("等线 Light", Font.PLAIN, 18));
 		
-		JButton osButton = new JButton("\u64CD\u4F5C\u7CFB\u7EDF\u8FDB\u7A0B");
+		JButton osButton = new JButton("操作系统进程");
 		osButton.setFont(new Font("楷体", Font.PLAIN, 32));
 		osButton.addActionListener(new ActionListener()
 		{
@@ -375,7 +375,7 @@ public class OSGUI extends Thread
 					.addContainerGap())
 		);
 		
-		JLabel Label_B = new JLabel("\u5916\u8BBE\u5DE5\u4F5C\u60C5\u51B5");
+		JLabel Label_B = new JLabel("外设工作情况");
 		scrollPane_device.setColumnHeaderView(Label_B);
 		Label_B.setFont(new Font("宋体", Font.BOLD, 32));
 		Label_B.setHorizontalAlignment(SwingConstants.CENTER);
@@ -390,7 +390,7 @@ public class OSGUI extends Thread
 		runInfor.setEditable(false);
 		scrollPane_run.setViewportView(runInfor);
 		
-		JLabel Label_A = new JLabel("\u8BA1\u7B97\u673A\u5185\u90E8\u5173\u952E\u4FE1\u606F");
+		JLabel Label_A = new JLabel("计算机内部关键信息");
 		Label_A.setHorizontalAlignment(SwingConstants.CENTER);
 		scrollPane_run.setColumnHeaderView(Label_A);
 		Label_A.setFont(new Font("宋体", Font.BOLD, 32));

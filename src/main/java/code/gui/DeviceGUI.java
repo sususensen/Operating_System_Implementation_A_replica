@@ -52,7 +52,7 @@ public class DeviceGUI extends Thread
 	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1280, 720);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		
@@ -74,34 +74,34 @@ public class DeviceGUI extends Thread
 		
 		JScrollPane scrollPane_9 = new JScrollPane();
 		
-		JLabel lblNewLabel_5 = new JLabel("A\u6253\u5370\u673A");
+		JLabel lblNewLabel_5 = new JLabel("A打印机");
 		lblNewLabel_5.setFont(new Font("����", Font.PLAIN, 24));
 		
 		printerABar = new JProgressBar();
 		printerABar.setFont(new Font("����", Font.PLAIN, 24));
-		printerABar.setToolTipText("\u6253\u5370\u673AA\u6709\u6548\u5DE5\u4F5C\u65F6\u95F4");
+		printerABar.setToolTipText("打印机A有效工作时间");
 		printerABar.setStringPainted(true);
 		
-		JLabel lblNewLabel_5_1 = new JLabel("B\u6253\u5370\u673A");
+		JLabel lblNewLabel_5_1 = new JLabel("B打印机");
 		lblNewLabel_5_1.setFont(new Font("����", Font.PLAIN, 24));
 		
 		printerBBar = new JProgressBar();
 		printerBBar.setStringPainted(true);
-		printerBBar.setToolTipText("\u6253\u5370\u673AB\u6709\u6548\u5DE5\u4F5C\u65F6\u95F4");
+		printerBBar.setToolTipText("打印机B有效工作时间");
 		printerBBar.setFont(new Font("����", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_5_2 = new JLabel("C\u6253\u5370\u673A");
+		JLabel lblNewLabel_5_2 = new JLabel("C打印机");
 		lblNewLabel_5_2.setFont(new Font("����", Font.PLAIN, 24));
 		
 		printerCBar = new JProgressBar();
 		printerCBar.setFont(new Font("����", Font.PLAIN, 24));
-		printerCBar.setToolTipText("\u6253\u5370\u673AC\u6709\u6548\u5DE5\u4F5C\u65F6\u95F4");
+		printerCBar.setToolTipText("打印机C有效工作时间");
 		printerCBar.setStringPainted(true);
 		
 		JScrollPane scrollPane_8_1 = new JScrollPane();
 		
 		// �رհ�ť
-		JButton closeButton = new JButton("\u5173\u95ED");
+		JButton closeButton = new JButton("关闭");
 		closeButton.setFont(new Font("����", Font.BOLD, 48));
 		closeButton.addActionListener(new ActionListener()
 		{
@@ -211,17 +211,17 @@ public class DeviceGUI extends Thread
 		);
 		panel.setLayout(new MigLayout("wrap 3", "[100!][100!][100!]", "[50!][50!][50!][50!][50!][50!][50!]"));
 		
-		JLabel lblNewLabel_7 = new JLabel("\u8BBE\u5907\u53F7");
+		JLabel lblNewLabel_7 = new JLabel("设备号");
 		lblNewLabel_7.setFont(new Font("����", Font.PLAIN, 32));
 		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_7, "cell 0 0");
 		
-		JLabel lblNewLabel_7_1 = new JLabel("\u8BBE\u5907\u540D");
+		JLabel lblNewLabel_7_1 = new JLabel("设备名");
 		lblNewLabel_7_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_7_1.setFont(new Font("����", Font.PLAIN, 32));
 		panel.add(lblNewLabel_7_1, "cell 1 0");
 		
-		JLabel lblNewLabel_7_2 = new JLabel("\u5165  \u53E3");
+		JLabel lblNewLabel_7_2 = new JLabel("入  口");
 		lblNewLabel_7_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_7_2.setFont(new Font("����", Font.PLAIN, 32));
 		panel.add(lblNewLabel_7_2, "cell 2 0");
@@ -310,7 +310,7 @@ public class DeviceGUI extends Thread
 		lblNewLabel_8_6.setFont(new Font("����", Font.BOLD, 24));
 		panel.add(lblNewLabel_8_6, "cell 2 6");
 		
-		JLabel lblNewLabel_6 = new JLabel("\u7B49\u5F85\u6253\u5370\u673A\u961F\u5217");
+		JLabel lblNewLabel_6 = new JLabel("等待打印机队列");
 		lblNewLabel_6.setFont(new Font("����", Font.PLAIN, 32));
 		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
 		scrollPane_8_1.setColumnHeaderView(lblNewLabel_6);
@@ -345,14 +345,14 @@ public class DeviceGUI extends Thread
 		fileText.setFont(new Font("����", Font.PLAIN, 14));
 		scrollPane_5.setViewportView(fileText);
 		
-		JLabel lblNewLabel_4 = new JLabel("\u6444\u50CF\u673A");
+		JLabel lblNewLabel_4 = new JLabel("摄像机");
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setFont(new Font("����", Font.PLAIN, 32));
 		scrollPane_4.setColumnHeaderView(lblNewLabel_4);
 		
 		cameraBar = new JProgressBar();
 		cameraBar.setFont(new Font("����", Font.PLAIN, 24));
-		cameraBar.setToolTipText("\u6444\u50CF\u673A\u6709\u6548\u5DE5\u4F5C\u65F6\u95F4");
+		cameraBar.setToolTipText("摄像机有效工作时间");
 		cameraBar.setStringPainted(true);
 		cameraBar.setOrientation(SwingConstants.VERTICAL);
 		scrollPane_4.setRowHeaderView(cameraBar);
@@ -362,7 +362,7 @@ public class DeviceGUI extends Thread
 		cameraLast.setEditable(false);
 		scrollPane_4.setViewportView(cameraLast);
 		
-		JLabel lblNewLabel_3 = new JLabel("\u6253\u5370\u673A");
+		JLabel lblNewLabel_3 = new JLabel("打印机");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("����", Font.PLAIN, 32));
 		scrollPane_3.setColumnHeaderView(lblNewLabel_3);
@@ -372,14 +372,14 @@ public class DeviceGUI extends Thread
 		printerLast.setEditable(false);
 		scrollPane_3.setViewportView(printerLast);
 		
-		JLabel lblNewLabel_2 = new JLabel("\u5C4F\u5E55\u8F93\u51FA");
+		JLabel lblNewLabel_2 = new JLabel("屏幕输出");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("����", Font.PLAIN, 32));
 		scrollPane_2.setColumnHeaderView(lblNewLabel_2);
 		
 		outputBar = new JProgressBar();
 		outputBar.setFont(new Font("����", Font.PLAIN, 24));
-		outputBar.setToolTipText("\u5C4F\u5E55\u6709\u6548\u5DE5\u4F5C\u65F6\u95F4");
+		outputBar.setToolTipText("屏幕有效工作时间");
 		outputBar.setStringPainted(true);
 		outputBar.setOrientation(SwingConstants.VERTICAL);
 		scrollPane_2.setRowHeaderView(outputBar);
@@ -389,14 +389,14 @@ public class DeviceGUI extends Thread
 		outputLast.setEditable(false);
 		scrollPane_2.setViewportView(outputLast);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u952E\u76D8\u8F93\u5165");
+		JLabel lblNewLabel_1 = new JLabel("键盘输入");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("����", Font.PLAIN, 32));
 		scrollPane_1.setColumnHeaderView(lblNewLabel_1);
 		
 		inputBar = new JProgressBar();
 		inputBar.setFont(new Font("����", Font.PLAIN, 24));
-		inputBar.setToolTipText("\u952E\u76D8\u6709\u6548\u5DE5\u4F5C\u65F6\u95F4");
+		inputBar.setToolTipText("键盘有效工作时间");
 		inputBar.setStringPainted(true);
 		inputBar.setOrientation(SwingConstants.VERTICAL);
 		scrollPane_1.setRowHeaderView(inputBar);
@@ -406,7 +406,7 @@ public class DeviceGUI extends Thread
 		inputLast.setEditable(false);
 		scrollPane_1.setViewportView(inputLast);
 		
-		JLabel lblNewLabel = new JLabel("\u6587\u4EF6\u8C03\u7528");
+		JLabel lblNewLabel = new JLabel("文件调用");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("����", Font.PLAIN, 32));
 		scrollPane.setColumnHeaderView(lblNewLabel);

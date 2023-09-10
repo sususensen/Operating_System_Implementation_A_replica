@@ -49,7 +49,7 @@ public class MemoryGUI extends Thread
 	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 780, 640);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		blocks = new JButton[64];
 		for(int i=0;i<64;++i)
@@ -77,7 +77,7 @@ public class MemoryGUI extends Thread
 		JPanel memoryBlockPanel = new JPanel();
 		
 		// 关闭按钮
-		JButton closeButton = new JButton("\u5173\u95ED");
+		JButton closeButton = new JButton("关闭");
 		closeButton.setFont(new Font("楷体", Font.BOLD, 24));
 		closeButton.addActionListener(new ActionListener() 
 		{
@@ -89,7 +89,7 @@ public class MemoryGUI extends Thread
 			}
 		});
 		
-		JLabel LabelA = new JLabel("\u5185\u5B58\u7269\u7406\u5757\u4F7F\u7528\u60C5\u51B5");
+		JLabel LabelA = new JLabel("内存物理块使用情况");
 		LabelA.setFont(new Font("黑体", Font.PLAIN, 32));
 		
 		freeBlockNumText = new JTextField();
@@ -100,7 +100,7 @@ public class MemoryGUI extends Thread
 		
 		JPanel memoryInodePanel = new JPanel();
 		
-		JLabel LabelB = new JLabel("\u5185\u5B58Inode\u4F7F\u7528\u60C5\u51B5");
+		JLabel LabelB = new JLabel("内存Inode使用情况");
 		LabelB.setFont(new Font("黑体", Font.PLAIN, 32));
 		
 		freeInodeNumText = new JTextField();
@@ -110,12 +110,12 @@ public class MemoryGUI extends Thread
 		freeInodeNumText.setColumns(10);
 		
 		blockBar = new JProgressBar();
-		blockBar.setToolTipText("\u5DF2\u4F7F\u7528\u7684\u5185\u5B58");
+		blockBar.setToolTipText("已使用的内存");
 		blockBar.setStringPainted(true);
 		blockBar.setOrientation(SwingConstants.VERTICAL);
 		
 		inodeBar = new JProgressBar();
-		inodeBar.setToolTipText("\u5DF2\u4F7F\u7528\u7684Inode");
+		inodeBar.setToolTipText("已使用的Inode");
 		inodeBar.setStringPainted(true);
 		inodeBar.setOrientation(SwingConstants.VERTICAL);
 		

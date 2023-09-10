@@ -50,7 +50,7 @@ public class FileGUI extends Thread
 	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1280, 720);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		
@@ -80,7 +80,7 @@ public class FileGUI extends Thread
 		
 		JScrollPane scrollPane_4 = new JScrollPane();
 		
-		JButton close = new JButton("\u5173\u95ED\u754C\u9762");
+		JButton close = new JButton("关闭界面");
 		close.setFont(new Font("楷体", Font.BOLD, 24));
 		close.addActionListener(new ActionListener() 
 		{
@@ -139,7 +139,7 @@ public class FileGUI extends Thread
 							.addContainerGap())))
 		);
 		
-		JLabel lblNewLabel_3 = new JLabel("\u5404\u4E2A\u8FDB\u7A0B\u7684\u6587\u4EF6\u6253\u5F00\u8868");
+		JLabel lblNewLabel_3 = new JLabel("各个进程的文件打开表");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("黑体", Font.PLAIN, 32));
 		scrollPane_4.setColumnHeaderView(lblNewLabel_3);
@@ -149,7 +149,7 @@ public class FileGUI extends Thread
 		processOpenText.setTabSize(4);
 		scrollPane_4.setViewportView(processOpenText);
 		
-		JLabel lblNewLabel_2 = new JLabel("\u7CFB\u7EDF\u6587\u4EF6\u6253\u5F00\u8868");
+		JLabel lblNewLabel_2 = new JLabel("系统文件打开表");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("黑体", Font.PLAIN, 32));
 		scrollPane_3.setColumnHeaderView(lblNewLabel_2);
@@ -176,7 +176,7 @@ public class FileGUI extends Thread
 		inodeList.setFont(new Font("仿宋", Font.PLAIN, 16));
 		scrollPane_1.setViewportView(inodeList);
 		
-		JLabel lblNewLabel = new JLabel("\u7CFB\u7EDF\u6587\u4EF6\u9884\u89C8");
+		JLabel lblNewLabel = new JLabel("系统文件预览");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("黑体", Font.PLAIN, 32));
 		scrollPane.setColumnHeaderView(lblNewLabel);

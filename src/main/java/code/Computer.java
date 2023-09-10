@@ -608,10 +608,12 @@ public class Computer {
         System.setOut(printStream);
         Computer computer = new Computer();
         computer.NULL();
-        firstGUI.start();
+        //之后修改
+//        firstGUI.start();
         mainGUI.start();
         Initlize();
-        firstGUI.yes.setEnabled(true);
+        mainGUI.showWindow();
+//        firstGUI.yes.setEnabled(true);
         memoryGUI.start();
         diskGUI.start();
         deviceGUI.start();
