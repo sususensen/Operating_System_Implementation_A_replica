@@ -609,11 +609,11 @@ public class Computer {
         Computer computer = new Computer();
         computer.NULL();
         //之后修改
-//        firstGUI.start();
+        firstGUI.start();
         mainGUI.start();
         Initlize();
-        mainGUI.showWindow();
-//        firstGUI.yes.setEnabled(true);
+        // mainGUI.showWindow();
+        firstGUI.yes.setEnabled(true);
         memoryGUI.start();
         diskGUI.start();
         deviceGUI.start();
