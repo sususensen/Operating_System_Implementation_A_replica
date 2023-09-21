@@ -53,7 +53,7 @@ public class ProcessGUI extends Thread
 	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1300, 640);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		
@@ -75,7 +75,7 @@ public class ProcessGUI extends Thread
 		
 		JScrollPane scrollPane_6 = new JScrollPane();
 		
-		JButton closeButton = new JButton("\u5173\u95ED");
+		JButton closeButton = new JButton("关闭");
 		closeButton.setFont(new Font("����", Font.PLAIN, 24));
 		closeButton.addActionListener(new ActionListener() 
 		{
@@ -140,7 +140,7 @@ public class ProcessGUI extends Thread
 					.addGap(39))
 		);
 		
-		JLabel lblNewLabel_5_1 = new JLabel("\u9875\u8868");
+		JLabel lblNewLabel_5_1 = new JLabel("页表");
 		lblNewLabel_5_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5_1.setFont(new Font("����", Font.PLAIN, 24));
 		scrollPane_6.setColumnHeaderView(lblNewLabel_5_1);
@@ -149,7 +149,7 @@ public class ProcessGUI extends Thread
 		pageText.setFont(new Font("����", Font.PLAIN, 14));
 		scrollPane_6.setViewportView(pageText);
 		
-		JLabel lblNewLabel_5 = new JLabel("\u4EE3\u7801\u6BB5");
+		JLabel lblNewLabel_5 = new JLabel("代码段");
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5.setFont(new Font("����", Font.PLAIN, 24));
 		scrollPane_5.setColumnHeaderView(lblNewLabel_5);
@@ -327,7 +327,7 @@ public class ProcessGUI extends Thread
 		});
 		panel.add(buttun12, "cell 5 1");
 		
-		JLabel lblNewLabel_4 = new JLabel("\u5DF2\u5B8C\u6210");
+		JLabel lblNewLabel_4 = new JLabel("已完成");
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setFont(new Font("����", Font.PLAIN, 32));
 		scrollPane_4.setColumnHeaderView(lblNewLabel_4);
@@ -337,7 +337,7 @@ public class ProcessGUI extends Thread
 		deadText.setFont(new Font("����", Font.PLAIN, 14));
 		scrollPane_4.setViewportView(deadText);
 		
-		JLabel lblNewLabel_3 = new JLabel("\u963B\u585E\u6001");
+		JLabel lblNewLabel_3 = new JLabel("阻塞态");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("����", Font.PLAIN, 32));
 		scrollPane_3.setColumnHeaderView(lblNewLabel_3);
@@ -347,7 +347,7 @@ public class ProcessGUI extends Thread
 		blockText.setFont(new Font("����", Font.PLAIN, 14));
 		scrollPane_3.setViewportView(blockText);
 		
-		JLabel lblNewLabel_2 = new JLabel("\u8FD0\u884C\u6001");
+		JLabel lblNewLabel_2 = new JLabel("运行态");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("����", Font.PLAIN, 32));
 		scrollPane_2.setColumnHeaderView(lblNewLabel_2);
@@ -357,7 +357,7 @@ public class ProcessGUI extends Thread
 		runText.setFont(new Font("����", Font.PLAIN, 14));
 		scrollPane_2.setViewportView(runText);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u5C31\u7EEA\u6001");
+		JLabel lblNewLabel_1 = new JLabel("就绪态");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("����", Font.PLAIN, 32));
 		scrollPane_1.setColumnHeaderView(lblNewLabel_1);
@@ -367,7 +367,7 @@ public class ProcessGUI extends Thread
 		readyText.setFont(new Font("����", Font.PLAIN, 14));
 		scrollPane_1.setViewportView(readyText);
 		
-		JLabel lblNewLabel = new JLabel("\u65B0\u5EFA\u6001");
+		JLabel lblNewLabel = new JLabel("新建态");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("����", Font.PLAIN, 32));
 		scrollPane.setColumnHeaderView(lblNewLabel);

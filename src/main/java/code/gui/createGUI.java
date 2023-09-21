@@ -52,10 +52,10 @@ public class createGUI
 	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 587, 498);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setVisible(true);
 		
-		JLabel lblNewLabel = new JLabel("\u4F5C\u4E1A\u7C7B\u578B");
+		JLabel lblNewLabel = new JLabel("作业类型");
 		lblNewLabel.setFont(new Font("黑体", Font.PLAIN, 24));
 		
 		JComboBox<String> comboBox = new JComboBox<>();
@@ -65,14 +65,14 @@ public class createGUI
 		comboBox.setSelectedIndex(0);
 		comboBox.setFont(new Font("仿宋", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1 = new JLabel("\u4F18\u5148\u7EA7");
+		JLabel lblNewLabel_1 = new JLabel("优先级");
 		lblNewLabel_1.setFont(new Font("黑体", Font.PLAIN, 24));
 		
 		SpinnerModel model = new SpinnerNumberModel(5, 0, 9, 1);
 		JSpinner spinner = new JSpinner(model);
 		spinner.setFont(new Font("仿宋", Font.PLAIN, 24));
 		
-		JLabel lblNewLabel_1_1 = new JLabel("\u4EE3\u7801\u6570\u76EE");
+		JLabel lblNewLabel_1_1 = new JLabel("代码数目");
 		lblNewLabel_1_1.setFont(new Font("黑体", Font.PLAIN, 24));
 		
 		textField = new JTextField();
@@ -97,7 +97,7 @@ public class createGUI
 		});
 		
 		// 创建
-		JButton creat = new JButton("\u521B  \u5EFA");
+		JButton creat = new JButton("创  建");
 		creat.setFont(new Font("楷体", Font.PLAIN, 24));
 		creat.addActionListener(new ActionListener() 
 		{
@@ -139,7 +139,7 @@ public class createGUI
 		});
 		
 		// 随机创建
-		randomB = new JButton("\u968F\u673A\u521B\u5EFA");
+		randomB = new JButton("随机创建");
 		randomB.setFont(new Font("楷体", Font.PLAIN, 24));
 		randomB.addActionListener(new ActionListener() 
 		{
@@ -166,7 +166,7 @@ public class createGUI
 		});
 		
 		// 关闭
-		JButton close = new JButton("\u5173  \u95ED");
+		JButton close = new JButton("关  闭");
 		close.setFont(new Font("楷体", Font.PLAIN, 24));
 		close.addActionListener(new ActionListener()
 		{
@@ -236,7 +236,7 @@ public class createGUI
 					.addContainerGap(25, Short.MAX_VALUE))
 		);
 		
-		JLabel lblNewLabel_2 = new JLabel("\u6700\u8FD1\u521B\u5EFA\u7684\u4F5C\u4E1A");
+		JLabel lblNewLabel_2 = new JLabel("最近创建的作业");
 		lblNewLabel_2.setFont(new Font("黑体", Font.PLAIN, 24));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		scrollPane.setColumnHeaderView(lblNewLabel_2);
