@@ -56,7 +56,7 @@ public class MemoryGUI extends Thread
 		{
 			blocks[i] = new JButton();
 			blocks[i].setText(String.format(" %2d ", i));
-			blocks[i].setFont(new Font("é»‘ä½“", Font.PLAIN, 20));
+			blocks[i].setFont(new Font("ºÚÌå", Font.PLAIN, 20));
 			blocks[i].setHorizontalAlignment(SwingConstants.CENTER);
 			blocks[i].setOpaque(true);
 			blocks[i].setBackground(Color.WHITE);
@@ -67,7 +67,7 @@ public class MemoryGUI extends Thread
 		{
 			inodes[i] = new JButton();
 			inodes[i].setText(String.format(" %2d ", i));
-			inodes[i].setFont(new Font("é»‘ä½“", Font.PLAIN, 20));
+			inodes[i].setFont(new Font("ºÚÌå", Font.PLAIN, 20));
 			inodes[i].setHorizontalAlignment(SwingConstants.CENTER);
 			inodes[i].setOpaque(true);
 			inodes[i].setBackground(Color.WHITE);
@@ -76,9 +76,9 @@ public class MemoryGUI extends Thread
 		
 		JPanel memoryBlockPanel = new JPanel();
 		
-		// å…³é—­æŒ‰é’®
-		JButton closeButton = new JButton("å…³é—­");
-		closeButton.setFont(new Font("æ¥·ä½“", Font.BOLD, 24));
+		// ¹Ø±Õ°´Å¥
+		JButton closeButton = new JButton("¹Ø±Õ");
+		closeButton.setFont(new Font("¿¬Ìå", Font.BOLD, 24));
 		closeButton.addActionListener(new ActionListener() 
 		{
 			@Override
@@ -89,33 +89,33 @@ public class MemoryGUI extends Thread
 			}
 		});
 		
-		JLabel LabelA = new JLabel("å†…å­˜ç‰©ç†å—ä½¿ç”¨æƒ…å†µ");
-		LabelA.setFont(new Font("é»‘ä½“", Font.PLAIN, 32));
+		JLabel LabelA = new JLabel("ÄÚ´æÎïÀí¿éÊ¹ÓÃÇé¿ö");
+		LabelA.setFont(new Font("ºÚÌå", Font.PLAIN, 32));
 		
 		freeBlockNumText = new JTextField();
 		freeBlockNumText.setEditable(false);
-		freeBlockNumText.setFont(new Font("ä»¿å®‹", Font.PLAIN, 32));
+		freeBlockNumText.setFont(new Font("·ÂËÎ", Font.PLAIN, 32));
 		freeBlockNumText.setColumns(10);
 		freeBlockNumText.setText("Free: 64");
 		
 		JPanel memoryInodePanel = new JPanel();
 		
-		JLabel LabelB = new JLabel("å†…å­˜Inodeä½¿ç”¨æƒ…å†µ");
-		LabelB.setFont(new Font("é»‘ä½“", Font.PLAIN, 32));
+		JLabel LabelB = new JLabel("ÄÚ´æInodeÊ¹ÓÃÇé¿ö");
+		LabelB.setFont(new Font("ºÚÌå", Font.PLAIN, 32));
 		
 		freeInodeNumText = new JTextField();
 		freeInodeNumText.setText("Free: 16");
-		freeInodeNumText.setFont(new Font("ä»¿å®‹", Font.PLAIN, 32));
+		freeInodeNumText.setFont(new Font("·ÂËÎ", Font.PLAIN, 32));
 		freeInodeNumText.setEditable(false);
 		freeInodeNumText.setColumns(10);
 		
 		blockBar = new JProgressBar();
-		blockBar.setToolTipText("å·²ä½¿ç”¨çš„å†…å­˜");
+		blockBar.setToolTipText("ÒÑÊ¹ÓÃµÄÄÚ´æ");
 		blockBar.setStringPainted(true);
 		blockBar.setOrientation(SwingConstants.VERTICAL);
 		
 		inodeBar = new JProgressBar();
-		inodeBar.setToolTipText("å·²ä½¿ç”¨çš„Inode");
+		inodeBar.setToolTipText("ÒÑÊ¹ÓÃµÄInode");
 		inodeBar.setStringPainted(true);
 		inodeBar.setOrientation(SwingConstants.VERTICAL);
 		
@@ -215,9 +215,9 @@ public class MemoryGUI extends Thread
 				synchronized (MyLock.GUILock)
 				{
 					MyLock.GUILock.wait();
-					// æ›´æ–°å†…å­˜å—ä½¿ç”¨æƒ…å†µ
+					// ¸üĞÂÄÚ´æ¿éÊ¹ÓÃÇé¿ö
 					flashBlock();
-					// æ›´æ–°å†…å­˜Inodeä½¿ç”¨æƒ…å†µ
+					// ¸üĞÂÄÚ´æInodeÊ¹ÓÃÇé¿ö
 					flashInode();
 					
 				}
@@ -227,7 +227,7 @@ public class MemoryGUI extends Thread
 		}
 	}
 	/**
-	 * å…¶ä»–å‡½æ•°
+	 * ÆäËûº¯Êı
 	 * */
 	public void flashBlock()
 	{
