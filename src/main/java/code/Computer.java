@@ -182,48 +182,46 @@ public class Computer {
             String cylinderPath = diskPath + File.separator + Cylinder + i;
 
             for(int j = 0; j < 32; ++j) {
-                if ((i != 0 || j != 0) && (i != 0 || j != 1)) {
-                    if (i == 9 && j == 31) {
-                        break;
-                    }
+                if (i == 9 && j == 31) {
+                    break;
+                }
 
-                    try {
-                        String trackPath = cylinderPath + File.separator + Track + String.format("%2d", j);
-                        String sectorPath = trackPath + File.separator + Sector + String.format("%2d", 63) + ".txt";
-                        System.out.println(sectorPath);
-                        File file = new File(sectorPath);
-                        FileWriter fWriterA = new FileWriter(file);
-                        fWriterA.write("");
-                        fWriterA.flush();
-                        fWriterA.close();
-                        FileWriter fWriterB = new FileWriter(file, true);
-                        int sectorIndex = 63;
+                try {
+                    String trackPath = cylinderPath + File.separator + Track + String.format("%2d", j);
+                    String sectorPath = trackPath + File.separator + Sector + String.format("%2d", 63) + ".txt";
+                    System.out.println(sectorPath);
+                    File file = new File(sectorPath);
+                    FileWriter fWriterA = new FileWriter(file);
+                    fWriterA.write("");
+                    fWriterA.flush();
+                    fWriterA.close();
+                    FileWriter fWriterB = new FileWriter(file, true);
+                    int sectorIndex = 63;
 
-                        for(int index = 0; index < 256; ++index) {
-                            if (index < 191) {
-                                fWriterB.write("0000\n");
-                            } else if (index == 191) {
-                                if (i == 9 && j == 30) {
-                                    fWriterB.write(Block.INT_TO_HEX(63) + "\n");
-                                } else {
-                                    fWriterB.write(Block.INT_TO_HEX(64) + "\n");
-                                }
+                    for(int index = 0; index < 256; ++index) {
+                        if (index < 191) {
+                            fWriterB.write("0000\n");
+                        } else if (index == 191) {
+                            if (i == 9 && j == 30) {
+                                fWriterB.write(Block.INT_TO_HEX(63) + "\n");
                             } else {
-                                int blockNumber = Disk.BlockTransform_Location_To_Index(i, j, sectorIndex) + 64;
-                                fWriterB.write(Block.INT_TO_HEX(blockNumber) + "\n");
-                                --sectorIndex;
+                                fWriterB.write(Block.INT_TO_HEX(64) + "\n");
                             }
+                        } else {
+                            int blockNumber = Disk.BlockTransform_Location_To_Index(i, j, sectorIndex) + 64;
+                            fWriterB.write(Block.INT_TO_HEX(blockNumber) + "\n");
+                            --sectorIndex;
                         }
-
-                        fWriterB.flush();
-                        fWriterB.close();
-                        ++groupNum;
-                        if (groupNum % 32 == 0) {
-                            System.out.println("已创建" + groupNum + "组");
-                        }
-                    } catch (Exception var14) {
-                        var14.printStackTrace();
                     }
+
+                    fWriterB.flush();
+                    fWriterB.close();
+                    ++groupNum;
+                    if (groupNum % 32 == 0) {
+                        System.out.println("已创建" + groupNum + "组");
+                    }
+                } catch (Exception var14) {
+                    var14.printStackTrace();
                 }
             }
         }
@@ -609,10 +607,10 @@ public class Computer {
         Computer computer = new Computer();
         computer.NULL();
         //之后修改
-        //firstGUI.start();
+        firstGUI.start();
         mainGUI.start();
         Initlize();
-         mainGUI.showWindow();
+         //mainGUI.showWindow();
         firstGUI.yes.setEnabled(true);
         memoryGUI.start();
         diskGUI.start();

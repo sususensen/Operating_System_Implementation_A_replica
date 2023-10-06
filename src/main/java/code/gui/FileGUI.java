@@ -10,9 +10,14 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 import javax.swing.SwingConstants;
 import javax.swing.JTree;
@@ -24,6 +29,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
 import javax.swing.JButton;
+import javax.swing.tree.TreePath;
 
 public class FileGUI extends Thread
 {
@@ -209,8 +215,64 @@ public class FileGUI extends Thread
 				}
 			}
 		));
+		tree.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				if (e.getClickCount() == 2) {
+					TreePath selectedPath = tree.getSelectionPath();
+					assert selectedPath != null;
+					DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) selectedPath.getLastPathComponent();
+					if (!selectedNode.isLeaf()) {
+						return; // 只处理叶子节点的双击事件
+					}
+					String fileName = selectedNode.toString();
+					String fileExtension = getFileExtension(fileName);
+					if (fileExtension.equalsIgnoreCase("txt") || fileExtension.equalsIgnoreCase("exe")) {
+						// 执行打开文件的逻辑
+						File selectedFile = new File(fileName);
+						try {
+							openFile(selectedFile);
+						} catch (IOException exception) {
+							exception.printStackTrace();
+						}
+					}
+				}
+			}
+		});
+
 		scrollPane.setViewportView(tree);
 		frame.getContentPane().setLayout(groupLayout);
+	}
+	private static void openFile(File file) throws IOException {
+		StringBuilder fileContent = new StringBuilder();
+		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+			String line;
+			while ((line = reader.readLine()) != null) {
+				fileContent.append(line).append(System.lineSeparator());
+			}
+		}
+
+		// 创建一个临时文件用于修改内容
+		File tempFile = File.createTempFile("temp", null);
+		tempFile.deleteOnExit();
+
+		// 将原文件内容写入临时文件
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
+			writer.write(fileContent.toString());
+		}
+
+		// 打开临时文件供编辑
+		Desktop.getDesktop().edit(tempFile);
+
+		// 将临时文件的内容保存回原文件
+		Files.copy(tempFile.toPath(), file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+	}
+	private static String getFileExtension(String fileName) {
+		int dotIndex = fileName.lastIndexOf('.');
+		if (dotIndex >= 0 && dotIndex < fileName.length() - 1) {
+			return fileName.substring(dotIndex + 1);
+		}
+		return "";
 	}
 	public void showWindow()
 	{

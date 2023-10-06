@@ -177,7 +177,7 @@ public class FirstGUI extends Thread
 		groupLayout.setHorizontalGroup(
 				groupLayout.createSequentialGroup()
 						.addGroup(groupLayout.createParallelGroup()
-								.addComponent(labelTitle,1024,1024,1024)
+								.addComponent(labelTitle,GroupLayout.DEFAULT_SIZE,1024,Short.MAX_VALUE)
 								.addGroup(groupLayout.createSequentialGroup()
 										.addGap(40)
 									  .addComponent(scrollPane,250,250,250)
@@ -202,10 +202,9 @@ public class FirstGUI extends Thread
 		groupLayout.setVerticalGroup(
 				groupLayout.createSequentialGroup()
 						.addGap(50)
-						.addComponent(labelTitle,60,60,60)
+						.addComponent(labelTitle,GroupLayout.DEFAULT_SIZE,60,GroupLayout.DEFAULT_SIZE)
 						.addGap(30)
 						.addGroup(groupLayout.createParallelGroup()
-
 								.addComponent(scrollPane,510,510,510)
 								.addGroup(groupLayout.createSequentialGroup()
 										.addGap(155)
@@ -269,7 +268,6 @@ public class FirstGUI extends Thread
 		try {
 			while(true)
 			{
-
 				textArea.setText(Computer.openInfo);;
 				sleep(1000);
 			}
